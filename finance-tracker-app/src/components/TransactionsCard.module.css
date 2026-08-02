@@ -1,0 +1,21 @@
+.transactionsSection {
+  max-width: 960px;
+  margin: 0 auto;
+  background: #1f2937;
+  border: 1px solid #2d3748;
+  border-radius: 0px;
+  padding: 24px;
+}
+
+.transactionsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.transactionsTitle {
+  font-size: 17px;
+  font-weight: 600;
+  color: #f9fafb;
+}

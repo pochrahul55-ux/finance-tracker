@@ -1,18 +1,15 @@
 import TransactionsList from "./TransactionsList";
+import styles from "./TransactionsCard.module.css";
 
 export default function TransactionsCard({ transactions }) {
   return (
-    <>
-      <h3>Recent Transactions</h3>
-      {transactions.map((transaction) => (
-        <TransactionsList
-          key={transaction.id}
-          amount={transaction.amount}
-          category={transaction.category}
-          date={transaction.date}
-          type={transaction.type}
-        />
+    <div className={styles.transactionsSection}>
+      <div className={styles.transactionsHeader}>
+        <span className={styles.transactionsTitle}>Recent Transactions</span>
+      </div>
+      {transactions.map((t) => (
+        <TransactionsList key={t.id} {...t} />
       ))}
-    </>
+    </div>
   );
 }

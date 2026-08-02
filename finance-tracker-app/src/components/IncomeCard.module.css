@@ -1,6 +1,6 @@
 .summaryCard {
   padding: 20px 24px;
-  border-radius: 16px;
+  border-radius: 0px;
   background: #1f2937;
   border: 1px solid #2d3748;
   display: flex;
@@ -9,7 +9,7 @@
   transition:
     transform 0.15s ease,
     border-color 0.15s ease;
-  margin-top: 10px;
+  margin-bottom: 16px;
 }
 
 .summaryCard:hover {
