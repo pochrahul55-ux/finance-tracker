@@ -5,7 +5,11 @@
   padding: 14px 8px;
   border-radius: 10px;
   transition: background 0.15s ease;
-  border-bottom: 1px solid #29323f;
+  border-bottom: 1px solid #374151;
+}
+
+.transactionItem:last-child {
+  border-bottom: none;
 }
 
 .transactionItem:hover {
