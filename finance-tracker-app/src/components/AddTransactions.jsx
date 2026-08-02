@@ -8,10 +8,12 @@ import { useNavigate } from "react-router-dom";
 export default function AddTransactions() {
   const [date, setDate] = useState();
   const [showPicker, setShowPicker] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   async function handleForm(e) {
     e.preventDefault();
+    setError(null);
 
     const formData = new FormData(e.target);
     const amount = formData.get("amount");
@@ -23,15 +25,19 @@ export default function AddTransactions() {
     if (!amount || type === "select" || !category || !date || !note) return;
 
     const newTransaction = {
-      amount : Number(amount),
+      amount: Number(amount),
       type,
       category,
       date,
       note,
     };
-    await addNewTransaction(newTransaction);
 
-    navigate("/");
+    try {
+      await addNewTransaction(newTransaction);
+      navigate("/");
+    } catch (err) {
+      setError(err.message);
+    }
   }
 
   return (
@@ -93,6 +99,7 @@ export default function AddTransactions() {
           <button className={styles.secondaryButton}>Back</button>
         </div>
       </form>
+      {error && <Error message={error} />}
     </div>
   );
 }
