@@ -4,6 +4,8 @@ import BalanceCard from "./BalanceCard";
 import IncomeCard from "./IncomeCard";
 import ExpenseCard from "./ExpenseCard";
 import TransactionsCard from "./TransactionsCard";
+import MoneyBackground from "./MoneyBackground";
+import styles from "./HomePage.module.css";
 
 const BASE_URL = "http://localhost:8000";
 
@@ -33,11 +35,14 @@ export default function Homepage() {
   }, []);
 
   return (
-    <div>
-      <BalanceCard totalIncome={totalIncome} totalExpense={totalExpense} />
-      <IncomeCard totalIncome={totalIncome} />
-      <ExpenseCard totalExpense={totalExpense} />
-      <TransactionsCard transactions={transactions} />
-    </div>
+    <>
+      <MoneyBackground />
+      <div className={styles.container}>
+        <BalanceCard totalIncome={totalIncome} totalExpense={totalExpense} />
+        <IncomeCard totalIncome={totalIncome} />
+        <ExpenseCard totalExpense={totalExpense} />
+        <TransactionsCard transactions={transactions} />
+      </div>
+    </>
   );
 }

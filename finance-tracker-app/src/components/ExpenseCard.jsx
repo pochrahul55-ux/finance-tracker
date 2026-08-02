@@ -1,6 +1,7 @@
 import styles from "./ExpenseCard.module.css";
 
 export default function ExpenseCard({ totalExpense }) {
+  console.log(totalExpense, typeof totalExpense);
   return (
     <div className={styles.summaryCard}>
       <div className={styles.iconWrap}>↓</div>

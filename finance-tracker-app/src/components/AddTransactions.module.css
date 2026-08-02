@@ -1,0 +1,162 @@
+.formWrapper {
+  max-width: 480px;
+  margin: 32px auto;
+  padding: 32px;
+  background: #1f2937;
+  border: 1px solid #2d3748;
+  border-radius: 16px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #9ca3af;
+  margin-bottom: -10px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.input,
+.select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #374151;
+  background: #111827;
+  color: #f3f4f6;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.input:focus,
+.select:focus {
+  border-color: #6366f1;
+}
+
+.input::placeholder {
+  color: #6b7280;
+}
+
+.input[readOnly] {
+  cursor: pointer;
+}
+
+.select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.datePickerWrapper {
+  position: relative;
+}
+
+.datePickerPopover {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 8px);
+  left: 0;
+  background: #111827;
+  border: 1px solid #374151;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.buttonRow {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.primaryButton {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
+}
+
+.primaryButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.45);
+}
+
+.secondaryButton {
+  flex: 1;
+  padding: 12px 20px;
+  border: 1px solid #374151;
+  border-radius: 10px;
+  background: transparent;
+  color: #d1d5db;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.secondaryButton:hover {
+  background: #26303f;
+  border-color: #4b5563;
+}
+
+/* Dark theme overrides for react-day-picker v10 */
+.datePickerPopover :global(.rdp-root) {
+  --rdp-accent-color: #6366f1;
+  --rdp-accent-background-color: #374151;
+  --rdp-day_button-border-radius: 8px;
+  background-color: transparent;
+  color: #f3f4f6; /* base text color — v10 doesn't theme this on its own */
+}
+
+.datePickerPopover :global(.rdp-month_caption),
+.datePickerPopover :global(.rdp-weekday) {
+  color: #f3f4f6;
+}
+
+.datePickerPopover :global(.rdp-weekday) {
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.datePickerPopover :global(.rdp-day_button) {
+  color: #f3f4f6;
+}
+
+.datePickerPopover :global(.rdp-day_button:hover) {
+  background-color: #374151;
+}
+
+.datePickerPopover :global(.rdp-selected .rdp-day_button) {
+  background-color: #6366f1;
+  color: #ffffff;
+}
+
+.datePickerPopover :global(.rdp-today .rdp-day_button) {
+  color: #a5b4fc;
+  font-weight: 700;
+}
+
+.datePickerPopover :global(.rdp-outside .rdp-day_button) {
+  color: #4b5563;
+}
+
+.datePickerPopover :global(.rdp-chevron) {
+  fill: #f3f4f6;
+}

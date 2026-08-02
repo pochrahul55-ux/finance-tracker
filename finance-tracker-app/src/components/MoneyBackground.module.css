@@ -1,0 +1,120 @@
+.moneyBackground {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at top, #1e2538 0%, #0f172a 60%, #0b1120 100%);
+}
+
+.bill {
+  position: absolute;
+  bottom: -80px;
+  font-size: 48px;
+  opacity: 0;
+  color: #4f46e5;
+  animation: floatUp linear infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.35;
+  }
+  90% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(30px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.bill:nth-child(1) {
+  left: 4%;
+  font-size: 40px;
+  color: #6366f1;
+  animation-duration: 18s;
+  animation-delay: 0s;
+}
+.bill:nth-child(2) {
+  left: 12%;
+  font-size: 56px;
+  color: #22c55e;
+  animation-duration: 22s;
+  animation-delay: 2s;
+}
+.bill:nth-child(3) {
+  left: 20%;
+  font-size: 34px;
+  color: #818cf8;
+  animation-duration: 16s;
+  animation-delay: 4s;
+}
+.bill:nth-child(4) {
+  left: 30%;
+  font-size: 48px;
+  color: #4f46e5;
+  animation-duration: 24s;
+  animation-delay: 1s;
+}
+.bill:nth-child(5) {
+  left: 40%;
+  font-size: 38px;
+  color: #22c55e;
+  animation-duration: 19s;
+  animation-delay: 6s;
+}
+.bill:nth-child(6) {
+  left: 50%;
+  font-size: 54px;
+  color: #6366f1;
+  animation-duration: 21s;
+  animation-delay: 3s;
+}
+.bill:nth-child(7) {
+  left: 58%;
+  font-size: 44px;
+  color: #818cf8;
+  animation-duration: 17s;
+  animation-delay: 8s;
+}
+.bill:nth-child(8) {
+  left: 66%;
+  font-size: 60px;
+  color: #22c55e;
+  animation-duration: 25s;
+  animation-delay: 5s;
+}
+.bill:nth-child(9) {
+  left: 74%;
+  font-size: 36px;
+  color: #4f46e5;
+  animation-duration: 20s;
+  animation-delay: 7s;
+}
+.bill:nth-child(10) {
+  left: 82%;
+  font-size: 50px;
+  color: #6366f1;
+  animation-duration: 23s;
+  animation-delay: 2.5s;
+}
+.bill:nth-child(11) {
+  left: 90%;
+  font-size: 40px;
+  color: #818cf8;
+  animation-duration: 18s;
+  animation-delay: 9s;
+}
+.bill:nth-child(12) {
+  left: 96%;
+  font-size: 46px;
+  color: #22c55e;
+  animation-duration: 22s;
+  animation-delay: 4.5s;
+}

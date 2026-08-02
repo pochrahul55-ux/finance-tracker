@@ -1,7 +1,7 @@
 {
   "transactions": [
     {
-      "id": 1,
+      "id": "1",
       "type": "expense",
       "amount": 45.99,
       "category": "Food",
@@ -9,7 +9,7 @@
       "note": "Dinner at restaurant"
     },
     {
-      "id": 2,
+      "id": "2",
       "type": "income",
       "amount": 3500,
       "category": "Salary",
@@ -17,7 +17,7 @@
       "note": "Monthly salary"
     },
     {
-      "id": 3,
+      "id": "3",
       "type": "expense",
       "amount": 120,
       "category": "Shopping",
@@ -25,7 +25,7 @@
       "note": "New shoes"
     },
     {
-      "id": 4,
+      "id": "4",
       "type": "expense",
       "amount": 75,
       "category": "Transport",
@@ -33,12 +33,21 @@
       "note": "Gas refill"
     },
     {
-      "id": 5,
+      "id": "5",
       "type": "income",
       "amount": 500,
       "category": "Freelance",
       "date": "2026-07-25",
       "note": "Website project payment"
+    },
+    {
+      "amount": 25,
+      "type": "expense",
+      "category": "Movie",
+      "date": "8/2/2026",
+      "note": "Went for movie",
+      "id": "Pm1rM7BspGs"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
