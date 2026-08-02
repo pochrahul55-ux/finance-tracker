@@ -40,6 +40,10 @@ export default function AddTransactions() {
     }
   }
 
+  function handleBack() {
+    navigate("/");
+  }
+
   return (
     <div className={styles.formWrapper}>
       <form className={styles.form} onSubmit={handleForm}>
@@ -96,7 +100,9 @@ export default function AddTransactions() {
 
         <div className={styles.buttonRow}>
           <button className={styles.primaryButton}>Add</button>
-          <button className={styles.secondaryButton}>Back</button>
+          <button className={styles.secondaryButton} type="button" onClick={handleBack}>
+            Back
+          </button>
         </div>
       </form>
       {error && <Error message={error} />}
