@@ -1,0 +1,44 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "type": "expense",
+      "amount": 45.99,
+      "category": "Food",
+      "date": "2026-07-20",
+      "note": "Dinner at restaurant"
+    },
+    {
+      "id": 2,
+      "type": "income",
+      "amount": 3500,
+      "category": "Salary",
+      "date": "2026-07-01",
+      "note": "Monthly salary"
+    },
+    {
+      "id": 3,
+      "type": "expense",
+      "amount": 120,
+      "category": "Shopping",
+      "date": "2026-07-15",
+      "note": "New shoes"
+    },
+    {
+      "id": 4,
+      "type": "expense",
+      "amount": 75,
+      "category": "Transport",
+      "date": "2026-07-18",
+      "note": "Gas refill"
+    },
+    {
+      "id": 5,
+      "type": "income",
+      "amount": 500,
+      "category": "Freelance",
+      "date": "2026-07-25",
+      "note": "Website project payment"
+    }
+  ]
+}
