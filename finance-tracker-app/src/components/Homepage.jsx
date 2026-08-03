@@ -44,9 +44,9 @@ export default function Homepage() {
     <>
       <MoneyBackground />
       <div className={styles.container}>
-        {isLoading ? (
-          <Loader />
-        ) : (
+        {isLoading && <Loader />}
+        {error && <Error message={error} />}
+        {!isLoading && !error && (
           <>
             <BalanceCard totalIncome={totalIncome} totalExpense={totalExpense} />
             <IncomeCard totalIncome={totalIncome} />
@@ -55,7 +55,6 @@ export default function Homepage() {
           </>
         )}
       </div>
-      {error && <Error message={error} />}
     </>
   );
 }
