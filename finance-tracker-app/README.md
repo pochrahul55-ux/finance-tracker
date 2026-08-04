@@ -1,16 +1,77 @@
-# React + Vite
+# Finance Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple finance tracker built with React and Vite. Track your income and expenses, view your total balance, and manage transactions — all backed by a local mock API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 📊 **Dashboard** — total balance, total income, and total expenses at a glance
+- 📝 **Add transactions** — record income or expenses with amount, category, date, and note
+- ✏️ **Edit transactions** — update any existing transaction, with the form pre-filled from its current data
+- 🗑️ **Delete transactions** — remove a transaction directly from the list
+- 📅 **Date picker** — pick dates via `react-day-picker` instead of typing them
+- ⏳ **Loading & error states** — clear feedback while data is fetching or if a request fails
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
+### 1. Install dependencies
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+\`\`\`bash
+npm install
+\`\`\`
+
+### 2. Start the mock API server
+
+This app uses `json-server` to serve `db.json` as a REST API.
+
+\`\`\`bash
+npm run server
+\`\`\`
+
+Runs at `http://localhost:8000`.
+
+### 3. Start the dev server
+
+In a separate terminal:
+
+\`\`\`bash
+npm run dev
+\`\`\`
+
+Runs at `http://localhost:5173` (default Vite port).
+
+Both the API server and the dev server need to be running at the same time for the app to work.
+
+## Available Scripts
+
+| Command           | Description                              |
+|--------------------|-------------------------------------------|
+| `npm run dev`       | Start the Vite dev server                 |
+| `npm run build`     | Build the app for production              |
+| `npm run preview`   | Preview the production build locally      |
+| `npm run server`    | Start json-server on port 8000            |
+| `npm run lint`      | Run ESLint                                |
+
+## Data Shape
+
+Each transaction in `db.json` follows this shape:
+
+\`\`\`json
+{
+  "id": "1",
+  "type": "expense",
+  "amount": 45.99,
+  "category": "Food",
+  "date": "2026-07-20",
+  "note": "Dinner at restaurant"
+}
+\`\`\`
+
+- `type` — `"income"` or `"expense"`
+- `amount` — stored as a number, not a string
+
+## Notes
+
+- Balance is calculated as `totalIncome - totalExpenses`.
+- New transactions are validated on submit — amount, type, category, date, and note are all required.
+- The Add and Edit forms share the same component; it pre-fills and switches to update mode when a transaction (with an `id`) is passed in.
