@@ -74,4 +74,4 @@ Each transaction in `db.json` follows this shape:
 
 - Balance is calculated as `totalIncome - totalExpenses`.
 - New transactions are validated on submit — amount, type, category, date, and note are all required.
-- The Add and Edit forms share the same component; it pre-fills and switches to update mode when a transaction (with an `id`) is passed in.
+- The Add and Edit forms share the same component; it pre-fills and switches to update mode when a transaction (with an `id`) is passed in.s share the same component; it pre-fills and switches to update mode when a transaction (with an `id`) is passed in.
