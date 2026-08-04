@@ -8,6 +8,7 @@ import MoneyBackground from "./MoneyBackground";
 import styles from "./HomePage.module.css";
 import Error from "./Error";
 import Loader from "./Loader";
+import deleteTransaction from "../utils/DeleteTransaction";
 
 const BASE_URL = "http://localhost:8000";
 
@@ -40,6 +41,15 @@ export default function Homepage() {
     fetchTransactions();
   }, []);
 
+  async function handleDelete(id) {
+    try {
+      await deleteTransaction(id);
+      setTransactions((prev) => prev.filter((transaction) => transaction.id !== id));
+    } catch (err) {
+      setError(err.message);
+    }
+  }
+
   return (
     <>
       <MoneyBackground />
@@ -51,7 +61,7 @@ export default function Homepage() {
             <BalanceCard totalIncome={totalIncome} totalExpense={totalExpense} />
             <IncomeCard totalIncome={totalIncome} />
             <ExpenseCard totalExpense={totalExpense} />
-            <TransactionsCard transactions={transactions} />
+            <TransactionsCard transactions={transactions} onDelete={handleDelete} />
           </>
         )}
       </div>

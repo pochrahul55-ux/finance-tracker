@@ -2,7 +2,7 @@ import TransactionsList from "./TransactionsList";
 import styles from "./TransactionsCard.module.css";
 import { useNavigate } from "react-router-dom";
 
-export default function TransactionsCard({ transactions }) {
+export default function TransactionsCard({ transactions, onDelete }) {
   const navigate = useNavigate();
 
   function handleAddTransaction() {
@@ -18,7 +18,7 @@ export default function TransactionsCard({ transactions }) {
         </button>
       </div>
       {transactions.map((t) => (
-        <TransactionsList key={t.id} {...t} />
+        <TransactionsList key={t.id} {...t} onDelete={onDelete} />
       ))}
     </div>
   );

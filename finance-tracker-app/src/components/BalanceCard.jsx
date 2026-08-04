@@ -6,7 +6,7 @@ export default function BalanceCard({ totalIncome, totalExpense }) {
   return (
     <div className={styles.balanceCard}>
       <div className={styles.balanceLabel}>Total Balance</div>
-      <div className={styles.balanceAmount}>${totalBalance}</div>
+      <div className={styles.balanceAmount}>${totalBalance.toFixed(2)}</div>
     </div>
   );
 }
